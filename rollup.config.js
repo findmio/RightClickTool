@@ -1,17 +1,32 @@
-// export default [
-// import typescript from '@rollup/plugin-typescript';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import del from 'rollup-plugin-delete';
+import alias from '@rollup/plugin-alias';
+import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+import copy from 'rollup-plugin-copy';
+import path from 'path';
+
 
 export default {
-  input: 'src/mixin/a.ts',
+  input: ['src/scripts/vendor.ts', 'src/background/background.ts'],
   output: {
-    file: 'dist/a.js',
-    // file: 'a.js',
-    format: 'es'
+    dir: 'dist/js/',
+    format: 'cjs',
   },
   plugins: [
     del({ targets: 'dist/*' }),
-    typescript()
+    alias({
+      entries: [
+        { find: '@', replacement: path.resolve(__dirname, 'src') },
+      ]
+    }),
+    copy({
+      targets: [
+        { src: 'public/*', dest: 'dist/' },
+      ]
+    }),
+    typescript(),
+    getBabelOutputPlugin({
+      configFile: path.resolve(__dirname, 'babel.config.js')
+    })
   ]
 }

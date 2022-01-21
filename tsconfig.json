@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "ES2015",
     "noImplicitAny": false,
     "sourceMap": false,
     "rootDir": "src",
-    "outDir": "dist/js",
     "noEmitOnError": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "lib": [
       "ES2015",
       "DOM",
@@ -15,5 +19,12 @@
     "typeRoots": [
       "node_modules/@types"
     ]
-  }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
