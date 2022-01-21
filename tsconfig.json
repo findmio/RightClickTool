@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "rootDir": "src",
+    "outDir": "dist/js",
+    "noEmitOnError": true,
+    "lib": [
+      "ES2015",
+      "DOM",
+      "ESNext"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "rightclicktool",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "丰富的右键单击工具",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "keywords": [],
+  "author": "findmio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/findmio/RightClickTool.git"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/chrome": "^0.0.176",
+    "rollup": "^2.65.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  }
+}
