@@ -5,11 +5,12 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
 import resolve from "@rollup/plugin-node-resolve"; // 解析 node 包
 import commonjs from "@rollup/plugin-commonjs"; // 适配 commonjs 导入的包
+import replace from '@rollup/plugin-replace';
 import path from 'path';
 
 
 export default {
-  input: ['src/scripts/vendor.ts', 'src/background/background.ts'],
+  input: ['src/scripts/vendor.ts', 'src/background/background.ts', 'src/popup/popup.tsx'],
   output: {
     dir: 'dist/js/',
     format: 'cjs',
@@ -20,6 +21,9 @@ export default {
       entries: [
         { find: '@', replacement: path.resolve(__dirname, 'src') },
       ]
+    }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     resolve(),
     commonjs(),
