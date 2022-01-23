@@ -1,7 +1,7 @@
 {
   "name": "不止右键",
   "manifest_version": 2,
-  "description": "丰富的右键单击工具",
+  "description": "丰富的右键管理工具",
   "version": "1.0",
   "icons": {
     "16": "images/icon@16.png",
@@ -11,6 +11,7 @@
   },
   "author": "findmio",
   "homepage_url": "https://github.com/findmio/RightClickTool.git",
+  "permissions": ["contextMenus"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file:///*"],
@@ -21,10 +22,11 @@
     "scripts": ["js/background.js"],
     "persistent": false
   },
+  "options_page": "options.html",
   "browser_action": {
     "default_icon": "images/icon@32.png",
     "default_title": "不止右键",
     "default_popup": "popup.html"
   },
-  "offline_enabled": false
+  "offline_enabled": true
 }
