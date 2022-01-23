@@ -1,6 +1,6 @@
 {
   "name": "不止右键",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "丰富的右键管理工具",
   "version": "1.0",
   "icons": {
@@ -19,11 +19,10 @@
     }
   ],
   "background": {
-    "scripts": ["js/background.js"],
-    "persistent": false
+    "service_worker": "js/background.js"
   },
   "options_page": "options.html",
-  "browser_action": {
+  "action": {
     "default_icon": "images/icon@32.png",
     "default_title": "不止右键",
     "default_popup": "popup.html"
