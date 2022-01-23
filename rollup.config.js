@@ -7,13 +7,19 @@ import resolve from "@rollup/plugin-node-resolve"; // 解析 node 包
 import commonjs from "@rollup/plugin-commonjs"; // 适配 commonjs 导入的包
 import replace from '@rollup/plugin-replace';
 import path from 'path';
+import postcss from 'rollup-plugin-postcss';
 
 
 export default {
-  input: ['src/scripts/vendor.ts', 'src/background/background.ts', 'src/popup/popup.tsx'],
+  input: [
+    'src/scripts/vendor.ts',
+    'src/background/background.ts',
+    'src/popup/popup.tsx',
+    'src/options/options.tsx',
+  ],
   output: {
     dir: 'dist/js/',
-    format: 'cjs',
+    format: 'esm',
   },
   plugins: [
     del({ targets: 'dist/*' }),
@@ -24,6 +30,7 @@ export default {
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
+      'preventAssignment': true
     }),
     resolve(),
     commonjs(),
@@ -33,9 +40,14 @@ export default {
       ]
     }),
     typescript(),
+    postcss({
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ]
+    }),
     getBabelOutputPlugin({
       configFile: path.resolve(__dirname, '.babelrc')
     })
   ],
-  // external: ["lodash"] 
 }
