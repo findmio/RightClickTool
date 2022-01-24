@@ -15,6 +15,7 @@
     "url": "https://github.com/findmio/RightClickTool.git"
   },
   "dependencies": {
+    "ahooks": "^3.1.8",
     "classnames": "^2.3.1",
     "lodash-es": "^4.17.21",
     "react": "^17.0.2",

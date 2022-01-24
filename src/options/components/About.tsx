@@ -4,12 +4,12 @@ const About = () => {
   return (
     <div>
       <div className='mb-5 text-2xl font-extrabold text-slate-900 tracking-tight'>
-        关于
+        {chrome.i18n.getMessage('about')}
       </div>
 
       <div className='mb-4'>
         <div className='mb-3 text-xl font-extrabold text-slate-900 tracking-tight'>
-          版本
+          {chrome.i18n.getMessage('version')}
         </div>
         <p className='font-medium'>1.0</p>
       </div>

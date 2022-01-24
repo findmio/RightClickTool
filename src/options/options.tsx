@@ -1,3 +1,4 @@
+import { useTitle } from 'ahooks'
 import classNames from 'classnames'
 import React, { useState } from 'react'
 import { render } from 'react-dom'
@@ -9,19 +10,20 @@ import './index.css'
 const AsideList = [
   {
     index: 0,
-    name: '设置',
+    name: chrome.i18n.getMessage('setting'),
   },
   {
     index: 1,
-    name: '帮助',
+    name: chrome.i18n.getMessage('help'),
   },
   {
     index: 2,
-    name: '关于',
+    name: chrome.i18n.getMessage('about'),
   },
 ]
 
 const App = () => {
+  useTitle(chrome.i18n.getMessage('extensionName'))
   const [activeKey, setActiveKey] = useState(0)
   return (
     <div className='w-full flex flex-row mt-20'>

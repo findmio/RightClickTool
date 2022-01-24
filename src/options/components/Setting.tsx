@@ -4,9 +4,9 @@ const Setting = () => {
   return (
     <div>
       <div className='mb-5 text-2xl font-extrabold text-slate-900 tracking-tight'>
-        设置
+        {chrome.i18n.getMessage('setting')}
       </div>
-      <p className='font-medium'>暂无</p>
+      <p className='font-medium'>{chrome.i18n.getMessage('notYet')}</p>
     </div>
   )
 }

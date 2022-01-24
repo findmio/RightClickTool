@@ -1,0 +1,25 @@
+{
+  "extensionName": {
+    "message": "More than right click",
+    "description": "Name of the extension"
+  },
+  "extensionDescribe": {
+    "message": "Rich right-click management tools",
+    "description": "extension describe"
+  },
+  "setting": {
+    "message": "setting"
+  },
+  "about": {
+    "message": "about"
+  },
+  "help": {
+    "message": "help"
+  },
+  "notYet": {
+    "message": "not yet"
+  },
+  "version": {
+    "message": "version"
+  }
+}

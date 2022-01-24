@@ -1,8 +1,9 @@
 {
-  "name": "不止右键",
+  "name": "__MSG_extensionName__",
   "manifest_version": 3,
-  "description": "丰富的右键管理工具",
+  "description": "__MSG_extensionDescribe__",
   "version": "1.0",
+  "default_locale": "en",
   "icons": {
     "16": "images/icon@16.png",
     "32": "images/icon@32.png",
@@ -24,7 +25,7 @@
   "options_page": "options.html",
   "action": {
     "default_icon": "images/icon@32.png",
-    "default_title": "不止右键",
+    "default_title": "__MSG_extensionName__",
     "default_popup": "popup.html"
   },
   "offline_enabled": true

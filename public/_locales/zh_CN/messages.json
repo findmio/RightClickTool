@@ -1,0 +1,25 @@
+{
+  "extensionName": {
+    "message": "不止右键",
+    "description": "Name of the extension"
+  },
+  "extensionDescribe": {
+    "message": "丰富的右键管理工具",
+    "description": "extension describe"
+  },
+  "setting": {
+    "message": "设置"
+  },
+  "about": {
+    "message": "关于"
+  },
+  "help": {
+    "message": "帮助"
+  },
+  "notYet": {
+    "message": "暂无"
+  },
+  "version": {
+    "message": "版本"
+  }
+}
