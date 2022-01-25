@@ -1,7 +1,7 @@
-import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 import del from 'rollup-plugin-delete';
 import alias from '@rollup/plugin-alias'; // 配置别名
-import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+// import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
 import resolve from "@rollup/plugin-node-resolve"; // 解析 node 包
 import commonjs from "@rollup/plugin-commonjs"; // 适配 commonjs 导入的包
@@ -39,15 +39,15 @@ export default {
         { src: 'public/*', dest: 'dist/' },
       ]
     }),
-    typescript(),
+    typescript({ tsconfig: 'tsconfig.json' }),
     postcss({
       plugins: [
         require('tailwindcss'),
         require('autoprefixer'),
       ]
     }),
-    getBabelOutputPlugin({
-      configFile: path.resolve(__dirname, '.babelrc')
-    })
+    // getBabelOutputPlugin({
+    //   configFile: path.resolve(__dirname, '.babelrc')
+    // })
   ],
 }
