@@ -1,4 +1,8 @@
-chrome.contextMenus.removeAll(() => {
+chrome.contextMenus.removeAll(async () => {
+
+  chrome.storage.sync.set({ config: Array(10).fill(0) });
+
+  const config = await chrome.storage.sync.get('config')
 
   chrome.contextMenus.create({
     id: 'baidu-search',

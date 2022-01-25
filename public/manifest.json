@@ -12,7 +12,7 @@
   },
   "author": "findmio",
   "homepage_url": "https://github.com/findmio/RightClickTool.git",
-  "permissions": ["contextMenus"],
+  "permissions": ["storage", "contextMenus"],
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file:///*"],
