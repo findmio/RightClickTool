@@ -29,9 +29,9 @@
     "message": "text"
   },
   "import": {
-    "message": "import"
+    "message": "import config"
   },
   "export": {
-    "message": "export"
+    "message": "export config"
   }
 }

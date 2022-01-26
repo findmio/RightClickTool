@@ -32,9 +32,9 @@
     "message": "文字"
   },
   "import": {
-    "message": "导入"
+    "message": "导入配置"
   },
   "export": {
-    "message": "导出"
+    "message": "导出配置"
   }
 }

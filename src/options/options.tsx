@@ -37,9 +37,9 @@ const AsideList = [
 
 const App = () => {
   useTitle(chrome.i18n.getMessage('extensionName'))
-  console.log(history)
-  console.log(location);
-  const [activeKey, setActiveKey] = useState(0)
+  const [activeKey, setActiveKey] = useState(
+    location.hash.split('#')?.[1] || AsideList[0].key
+  )
   return (
     <div className='w-full flex flex-row mt-20'>
       <div className='basis-1/12'></div>
@@ -49,11 +49,11 @@ const App = () => {
             <li
               className={classNames(
                 'px-3 py-2 mb-4 rounded-md inset-0 text-gray-400',
-                { 'bg-cyan-50 text-sky-500': activeKey === item.index }
+                { 'bg-cyan-50 text-sky-500': activeKey === item.key }
               )}
               onClick={() => {
-                setActiveKey(item.index)
-                history.pushState({}, '#/' + item.index)
+                setActiveKey(item.key)
+                location.hash = `#${item.key}`
               }}
             >
               {item.name}
@@ -62,7 +62,7 @@ const App = () => {
         </ul>
       </aside>
       <main className='basis-8/12'>
-        {AsideList.find(item => item.index === activeKey).render}
+        {AsideList.find(item => item.key === activeKey).render}
       </main>
       <div className='basis-1/12'></div>
     </div>
