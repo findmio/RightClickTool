@@ -6,5 +6,7 @@ module.exports = {
       'mini': '12rem',
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

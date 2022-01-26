@@ -16,10 +16,25 @@
   "help": {
     "message": "帮助"
   },
+  "backup": {
+    "message": "备份"
+  },
   "notYet": {
     "message": "暂无"
   },
   "version": {
     "message": "版本"
+  },
+  "text": {
+    "message": "文字"
+  },
+  "textPlaceholder": {
+    "message": "文字"
+  },
+  "import": {
+    "message": "导入"
+  },
+  "export": {
+    "message": "导出"
   }
 }

@@ -5,25 +5,40 @@ import { render } from 'react-dom'
 import About from './components/About'
 import Help from './components/Help'
 import Setting from './components/Setting'
+import BackUp from './components/backUp'
 import './index.css'
 
 const AsideList = [
   {
     index: 0,
+    key: 'setting',
     name: chrome.i18n.getMessage('setting'),
+    render: <Setting />,
   },
   {
     index: 1,
+    key: 'help',
     name: chrome.i18n.getMessage('help'),
+    render: <Help />,
   },
   {
     index: 2,
+    key: 'backup',
+    name: chrome.i18n.getMessage('backup'),
+    render: <BackUp />,
+  },
+  {
+    index: 3,
+    key: 'about',
     name: chrome.i18n.getMessage('about'),
+    render: <About />,
   },
 ]
 
 const App = () => {
   useTitle(chrome.i18n.getMessage('extensionName'))
+  console.log(history)
+  console.log(location);
   const [activeKey, setActiveKey] = useState(0)
   return (
     <div className='w-full flex flex-row mt-20'>
@@ -38,6 +53,7 @@ const App = () => {
               )}
               onClick={() => {
                 setActiveKey(item.index)
+                history.pushState({}, '#/' + item.index)
               }}
             >
               {item.name}
@@ -46,9 +62,7 @@ const App = () => {
         </ul>
       </aside>
       <main className='basis-8/12'>
-        {activeKey === 0 && <Setting />}
-        {activeKey === 1 && <Help />}
-        {activeKey === 2 && <About />}
+        {AsideList.find(item => item.index === activeKey).render}
       </main>
       <div className='basis-1/12'></div>
     </div>
